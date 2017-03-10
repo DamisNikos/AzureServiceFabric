@@ -44,7 +44,7 @@ namespace HelloWorldService
 
                 ServiceEventSource.Current.ServiceMessage(this.Context, "Hello World at " + DateTime.Now.ToLongTimeString());
 
-                await Task.Delay(TimeSpan.FromSeconds(1), cancellationToken);
+                await Task.Delay(TimeSpan.FromSeconds(5), cancellationToken);
             }
         }
     }
