@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x64</Platform>
-    <ProjectGuid>{DBDBDD7B-112D-4F76-878B-7276D9C824A3}</ProjectGuid>
+    <ProjectGuid>{D09F8106-709E-4676-97E8-B029841E3434}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CalculatorService</RootNamespace>
