@@ -11,7 +11,7 @@
   </ServiceTypes>
 
   <!-- Code package is your service executable. -->
-  <CodePackage Name="Code" Version="1.0.0">
+  <CodePackage Name="Code" Version="2.0.0">
     <EntryPoint>
       <ExeHost>
         <Program>CalculatorService101.exe</Program>
@@ -21,7 +21,7 @@
 
   <!-- Config package is the contents of the Config directoy under PackageRoot that contains an 
        independently-updateable and versioned set of custom configuration settings for your service. -->
-  <ConfigPackage Name="Config" Version="1.0.0" />
+  <ConfigPackage Name="Config" Version="2.0.0" />
 
   <Resources>
     <Endpoints>
