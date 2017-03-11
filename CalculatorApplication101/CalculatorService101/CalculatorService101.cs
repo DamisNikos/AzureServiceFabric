@@ -26,12 +26,15 @@ namespace CalculatorService101
         { }
         public Task<string> AddAsync(int b, int a)
         {
-            return Task.FromResult<string>(string.Format("Instance {0} returns: {1}",
-        this.Context.InstanceId, a + b));
+
+            
+            return Task.FromResult<string>(string.Format("Instance {0} returns: {1}", 
+                this.Context.InstanceId , a + b));
         }
         public Task<string> SubtractAsync(int a, int b) {
             return Task.FromResult<string>(string.Format("Instance {0} returns: {1}",
-        this.Context.InstanceId, a - b));
+                this.Context.InstanceId, a - b));
+
         }
         /// <summary>
         /// Optional override to create listeners (e.g., TCP, HTTP) for this service replica to handle client or user requests.

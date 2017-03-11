@@ -13,7 +13,8 @@ namespace CalculatorClient101
     {
         static void Main(string[] args)
         {
-            ICalculatorService calculatorClient = ServiceProxy.Create<ICalculatorService>(new Uri("fabric:/CalculatorApplication101/CalculatorService101"));
+            ICalculatorService calculatorClient = ServiceProxy.Create<ICalculatorService>
+                (new Uri("fabric:/CalculatorApplication101/CalculatorService101"));
             var result = calculatorClient.AddAsync(1, 2).Result;
             Console.WriteLine(result);
             Console.ReadLine();
