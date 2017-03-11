@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace CalculatorClient101
@@ -19,6 +20,15 @@ namespace CalculatorClient101
             result = calculatorClient.SubtractAsync(5, 3).Result;
             Console.WriteLine(result);
             Console.ReadKey();
+
+
+            while (true)
+            {
+               
+                result = calculatorClient.AddAsync(1, 2).Result;
+                Console.WriteLine(result);
+                Thread.Sleep(3000);
+            }
         }
     }
 }
