@@ -13,8 +13,8 @@ namespace CalculatorService101
 {
     public interface ICalculatorService : IService
     {
-        Task<int> AddAsync(int b, int a);
-        Task<int> SubtractAsync(int a, int b);
+        Task<string> AddAsync(int b, int a);
+        Task<string> SubtractAsync(int a, int b);
     }
     /// <summary>
     /// An instance of this class is created for each service instance by the Service Fabric runtime.
@@ -24,12 +24,15 @@ namespace CalculatorService101
         public CalculatorService101(StatelessServiceContext context)
             : base(context)
         { }
-        public Task<int> AddAsync(int b, int a)
+        public Task<string> AddAsync(int b, int a)
         {
-            return Task.FromResult(a + b);
+            
+            return Task.FromResult<string>(string.Format("Instance {0} returns: {1}", 
+                this.Context.InstanceId , a + b));
         }
-        public Task<int> SubtractAsync(int a, int b) {
-            return Task.FromResult(a - b);
+        public Task<string> SubtractAsync(int a, int b) {
+            return Task.FromResult<string>(string.Format("Instance {0} returns: {1}",
+                this.Context.InstanceId, a - b));
         }
         /// <summary>
         /// Optional override to create listeners (e.g., TCP, HTTP) for this service replica to handle client or user requests.
