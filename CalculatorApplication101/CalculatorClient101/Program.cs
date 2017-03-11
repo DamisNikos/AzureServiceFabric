@@ -16,7 +16,9 @@ namespace CalculatorClient101
             var result = calculatorClient.AddAsync(1, 2).Result;
             Console.WriteLine(result);
             Console.ReadLine();
-            
+            result = calculatorClient.SubtractAsync(5, 3).Result;
+            Console.WriteLine(result);
+            Console.ReadKey();
         }
     }
 }
