@@ -6,6 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.ServiceFabric.Services.Communication.Runtime;
 using Microsoft.ServiceFabric.Services.Runtime;
+using System.IO;
 
 namespace HelloWorldService
 {
@@ -36,14 +37,11 @@ namespace HelloWorldService
             // TODO: Replace the following sample code with your own logic 
             //       or remove this RunAsync override if it's not needed in your service.
 
-            long iterations = 0;
-
-            while (true)
+            while (!cancellationToken.IsCancellationRequested)
             {
-                cancellationToken.ThrowIfCancellationRequested();
-
-                ServiceEventSource.Current.ServiceMessage(this.Context, "Hello World at " + DateTime.Now.ToLongTimeString());
-
+                var dataPackage = this.Context.CodePackageActivationContext.GetDataPackageObject("TestData");
+                var text = File.ReadAllText(Path.Combine(dataPackage.Path, "data.txt"));
+                ServiceEventSource.Current.ServiceMessage(this.Context, text);
                 await Task.Delay(TimeSpan.FromSeconds(5), cancellationToken);
             }
         }
