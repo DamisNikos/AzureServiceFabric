@@ -40,9 +40,11 @@ namespace ConsoleRedirect
 
             while (true)
             {
-                cancellationToken.ThrowIfCancellationRequested();
+                                    
+                var configSection = this.Context.CodePackageActivationContext.GetConfigurationPackageObject("Config");
+                var text = configSection.Settings.Sections["MyConfigSection"].Parameters["MyParameter"].Value;
 
-                ServiceEventSource.Current.ServiceMessage(this.Context, "Working-{0}", ++iterations);
+                ServiceEventSource.Current.ServiceMessage(this.Context, "Working-{0}: {1}", ++iterations, text);
 
                 await Task.Delay(TimeSpan.FromSeconds(1), cancellationToken);
             }

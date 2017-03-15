@@ -12,12 +12,13 @@
 
   <!-- Code package is your service executable. -->
   <CodePackage Name="Code" Version="1.0.0">
-    <SetupEntryPoint>
+    <!-- Add your own setup programm which runs before the <EntryPoint> -->
+    <!--<SetupEntryPoint>
       <ExeHost>
         <Program>scripts/test.cmd</Program>
         <ConsoleRedirection FileRetentionCount="5" FileMaxSizeInKb="2048"/>
       </ExeHost>
-    </SetupEntryPoint>
+    </SetupEntryPoint>-->
     <EntryPoint>
       <ExeHost>
         <Program>ConsoleRedirect.exe</Program>
